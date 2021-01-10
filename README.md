@@ -1,4 +1,4 @@
-# datastructuresTwo
+# datastructuresArrays
 
 *This code is posted with instructor permission, and adheres to school policy.
 
