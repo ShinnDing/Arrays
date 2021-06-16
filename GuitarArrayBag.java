@@ -22,19 +22,17 @@
  * 		deletes a specified Guitar from the collection
  */
 public class GuitarArrayBag {
-
 	private Guitar items[];
 	private int manyItems;
 	
 	/**
-	 * Instantiates a GuitarArrayBag with a given capacity.
+	 * Constructor for GuitarArrayBag with a given capacity of maxItems.
 	 * @param manyItems is the number of Guitars in items[].
 	 * 			manyItems is initialized at 0 and increases by one
 	 * 			for each Guitar object added to collection, or
 	 * 			decreases by one for each Guitar object removed from collection.
 	 */
 	public GuitarArrayBag(int maxItems) {
-
 		items = new Guitar[maxItems];
 		manyItems = 0;
 	}
@@ -53,7 +51,6 @@ public class GuitarArrayBag {
 	 * 				specified in Driver class.
 	 */
 	public void insert(String brand, int weight, int year) {
-
 		Guitar guitar = new Guitar();
 		guitar.setBrand(brand);
 		guitar.setWeight(weight);
@@ -85,9 +82,7 @@ public class GuitarArrayBag {
 	 * @return the number of Guitar objects in collection.
 	 */
 	public int size() {
-
 		int size = 0;
-
 		for (int i = 0; i < items.length; i++) {
 			if (items[i] != null) {
 				size++;
@@ -107,7 +102,6 @@ public class GuitarArrayBag {
 	 * 				of each Guitar object in collection.
 	 */
 	public String toString() {
-
 		String s;
 		s = ("\tBrand\t\tWeight\t\tYear\n\t------------------------------------");
 
@@ -131,7 +125,6 @@ public class GuitarArrayBag {
 	 * 				returns null if not found
 	 */
 	public Guitar findFirst(String str) {
-
 		for (int i = 0; i < manyItems; i++) {
 			if ((items[i].getBrand().equalsIgnoreCase(str))) {
 				return items[i];
@@ -152,7 +145,6 @@ public class GuitarArrayBag {
 	 * 				returns null if not found
 	 */
 	public Guitar findLast(String str) {
-
 		for (int i = manyItems - 1; i >= 0; i--) {
 			if ((items[i].getBrand().equalsIgnoreCase(str))) {
 				return items[i];
@@ -170,7 +162,6 @@ public class GuitarArrayBag {
 	 * 			specified brand from Driver class.
 	 */
 	public int countOccurrences(String str) {
-
 		int count = 0;
 
 		for (int i = 0; i < manyItems; i++) {
@@ -182,7 +173,6 @@ public class GuitarArrayBag {
 	}
 
 	/**
-	 * 
 	 * @param g is the Guitar object specified in Driver class that
 	 * 				is compared to Guitar objects in existing collection
 	 * @return true if collection contains Guitar object specified in Driver
@@ -190,7 +180,6 @@ public class GuitarArrayBag {
 	 * 				false if specified Guitar object is not found in collection
 	 */
 	public boolean contains(Guitar g) {
-
 		for (int i = 0; i < manyItems; i++) {
 			if (items[i].compareTo(g) == 0) {
 				return true;
@@ -214,7 +203,6 @@ public class GuitarArrayBag {
 	 * @return the total weight of the Guitar collection
 	 */	
 	public int total() {
-
 		int weight = 0;
 		int numItems = 0;
 		int w = 0;
@@ -241,7 +229,6 @@ public class GuitarArrayBag {
 	 * 			have a weight within the specified weight range
 	 */
 	public int countRange(int w1, int w2) {
-
 		int countRange = 0;
 
 		for (int i = 0; i < items.length; i++) {
@@ -267,16 +254,15 @@ public class GuitarArrayBag {
 	 * 			false if the Guitar object specified in Driver
 	 * 			is not found
 	 */
-	public boolean delete(Guitar g) {
-		
+	public boolean delete(Guitar g) {		
 		for (int i = 0; i < manyItems; i++) {
 			if (items[i].compareTo(g) == 0) {
 				items[i] = items[i+1];
 				items[i+1] = items[i+2];
 				return true;
 			}
-			}
+		}
 		manyItems--;
 		return false;
-		}
+	}
 }
