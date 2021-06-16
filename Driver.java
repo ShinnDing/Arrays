@@ -27,7 +27,6 @@
  *						delete(brand) method is called
  */
 public class Driver {
-	
 	public static void main(String[] args) {
 		
 		GuitarArrayBag g = new GuitarArrayBag(10);
@@ -55,7 +54,5 @@ public class Driver {
 		
 		//confirms delete method in list form
 		System.out.println("\n" + g.toString() + "\n");
-		
 	}
-
 }
