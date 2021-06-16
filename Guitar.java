@@ -4,9 +4,7 @@
  * This class represents a Guitar's
  * specified brand, weight, and year.
  */
-
 public class Guitar {
-
 	private String brand;
 	private int weight;
 	private int year;
@@ -59,5 +57,4 @@ public class Guitar {
 
 		return this.brand.compareToIgnoreCase(other.brand);
 	}
-
 }
